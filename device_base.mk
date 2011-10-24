@@ -128,6 +128,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
        wifi.interface=eth0 \
        wifi.supplicant_scan_interval=15 \
        dalvik.vm.heapsize=32m
+       
+# We add this for the 3G tweak to increase 3G performance.
+# Tweak sourced from http://rootzwiki.com/topic/1624-radioguidetweak-radio-jk1-kb1-kb2-kb3-kd1-and-uckd1/
+PRODUCT_PROPERTY_OVERRIDES += \
+       ro.ril.hsxpa=2
+       ro.ril.gprsclass=12
+       ro.ril.hsdpa.category=16
+       ro.ril.hsupa.category=8
+       
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
