@@ -5,3 +5,6 @@
 rild.libpath=/vendor/lib/libsec-ril.so
 rild.libargs=-d /dev/ttyS0
 ro.sf.lcd_density=240
+ro.secure=0
+ro.debuggable=1
+persist.service.adb.enable=1
