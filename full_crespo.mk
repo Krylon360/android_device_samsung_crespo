@@ -29,4 +29,4 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full.mk)
 # Discard inherited values and use our own instead.
 PRODUCT_NAME := full_crespo
 PRODUCT_DEVICE := crespo
-PRODUCT_MODEL := Full Android on Crespo
+PRODUCT_MODEL := Pure Bionix on the Nexus S

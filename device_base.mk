@@ -115,6 +115,21 @@ PRODUCT_COPY_FILES += \
 	frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+	
+# Copy these over
+PRODUCT_COPY_FILES += \
+   vendor/bionix/trinity/bin/backuptool.sh:system/bin/backuptool.sh \
+   vendor/bionix/trinity/bin/bootanimation:system/bin/bootanimation \
+   vendor/bionix/trinity/bin/screenshot:system/bin/screenshot \
+   vendor/bionix/trinity/etc/init.d/95dimmers:system/etc/init.d/95dimmers \
+   vendor/bionix/trinity/etc/init.d/98tweak:system/etc/init.d/98tweak \
+   vendor/bionix/trinity/etc/init.d/99complete:system/etc/init.d/99complete \
+   vendor/bionix/trinity/modules/ansi_cprng.ko:system/modules/ansi_cprng.ko \
+   vendor/bionix/trinity/modules/bcm4329.ko:system/modules/bcm4329.ko \
+   vendor/bionix/trinity/modules/cifs.ko:system/modules/cifs.ko \
+   vendor/bionix/trinity/modules/scsi_wait_scan.ko:system/modules/scsi_wait_scan.ko \
+   vendor/bionix/trinity/modules/tun.ko:system/modules/tun.ko \
+   vendor/bionix/romstats/com.adlx.stats.apk:system/app/com.adlx.stats.apk
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
@@ -127,7 +142,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_PROPERTY_OVERRIDES += \
        wifi.interface=eth0 \
        wifi.supplicant_scan_interval=15 \
-       dalvik.vm.heapsize=32m
+       dalvik.vm.heapsize=48m
        
 # We add this for the 3G tweak to increase 3G performance.
 # Tweak sourced from http://rootzwiki.com/topic/1624-radioguidetweak-radio-jk1-kb1-kb2-kb3-kd1-and-uckd1/
@@ -136,6 +151,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
        ro.ril.gprsclass=12 \
        ro.ril.hsdpa.category=16 \
        ro.ril.hsupa.category=8
+       
+# We insert this for ROM Stats
+PRODUCT_PROPERTY_OVERRIDES += \
+      ro.stats.devname=Krylon360 \
+      ro.stats.romname=Pure.Bionix \
+      ro.stats.romversion=1.4
        
 
 # we have enough storage space to hold precise GC data
