@@ -129,7 +129,12 @@ PRODUCT_COPY_FILES += \
    vendor/bionix/trinity/modules/cifs.ko:system/modules/cifs.ko \
    vendor/bionix/trinity/modules/scsi_wait_scan.ko:system/modules/scsi_wait_scan.ko \
    vendor/bionix/trinity/modules/tun.ko:system/modules/tun.ko \
-   vendor/bionix/romstats/com.adlx.stats.apk:system/app/com.adlx.stats.apk
+   vendor/bionix/romstats/com.adlx.stats.apk:system/app/com.adlx.stats.apk \
+   vendor/bionix/media/bootanimation.zip:/system/media/bootanimation.zip
+   
+PRODUCT_PACKAGE_OVERLAYS += vendor/bionix/overlay/dictionaries
+
+PRODUCT_PACKAGES += LatinIME
 
 # The OpenGL ES API level that is natively supported by this device.
 # This is a 16.16 fixed point number
@@ -156,8 +161,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
       ro.stats.devname=Krylon360 \
       ro.stats.romname=Pure.Bionix \
-      ro.stats.romversion=1.4
-       
+      ro.stats.romversion=1.6
+
+# Rom Manager info
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.rommanager.developerid=Krylon360 \
+ro.modversion=Bionix-1.6-NexusS    
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise

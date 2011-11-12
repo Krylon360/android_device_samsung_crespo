@@ -8,5 +8,4 @@ ro.sf.lcd_density=240
 ro.secure=0
 ro.debuggable=1
 persist.service.adb.enable=1
-ro.rommanager.developerid=Krylon360
-ro.modversion=Pure.Bionix-1.4
+
